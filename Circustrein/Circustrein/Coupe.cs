@@ -10,6 +10,14 @@ namespace Circustrein
     {
         public List<Animal> AnimalsInCoupe { get; private set; }
 
+        public static int CoupeNumber = 1;
+
+        public Coupe()
+        {
+            CoupeNumber++;
+            AnimalsInCoupe = new List<Animal>();
+        }
+
         //Animal who eats meat cant be in the same coupe as an animal same size/smaller than him.
         //Coupe maxcapacity = 10, small animal = 1, medium = 3, big = 5.
         //Use up space as much as is possible.

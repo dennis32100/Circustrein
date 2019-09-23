@@ -16,5 +16,18 @@ namespace Circustrein
         {
             InitializeComponent();
         }
+
+        private void btnAddAnimal_Click(object sender, EventArgs e)
+        {
+            if ()
+            {
+
+            }
+        }
+
+        private void rbtnSmall_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

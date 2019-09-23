@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Circustrein.Common;
 
 namespace Circustrein
 {
@@ -22,35 +23,45 @@ namespace Circustrein
             //Carnivores
             if (rbtnCarnivore.Checked && rbtnSmall.Checked)
             {
-                Animal a = new Animal(rbtnCarnivore.Text.ToString(), rbtnSmall.Text.ToString());
+                //Animal a = new Animal(rbtnCarnivore.Text.ToString(), rbtnSmall.Text.ToString());
+                Animal a = new Animal(AnimalDiet.Carnivore, AnimalSize.Small);
                 lbAnimals.Items.Add(a);
             }
             else if (rbtnCarnivore.Checked && rbtnMedium.Checked)
             {
-                Animal a = new Animal(rbtnCarnivore.Text.ToString(), rbtnMedium.Text.ToString());
+                //Animal a = new Animal(rbtnCarnivore.Text.ToString(), rbtnMedium.Text.ToString());
+                Animal a = new Animal(AnimalDiet.Carnivore, AnimalSize.Medium);
                 lbAnimals.Items.Add(a);
             }
             else if (rbtnCarnivore.Checked && rbtnLarge.Checked)
             {
-                Animal a = new Animal(rbtnCarnivore.Text.ToString(), rbtnLarge.Text.ToString());
+                //Animal a = new Animal(rbtnCarnivore.Text.ToString(), rbtnLarge.Text.ToString());
+                Animal a = new Animal(AnimalDiet.Carnivore, AnimalSize.Large);
                 lbAnimals.Items.Add(a);
             }
 
             //Herbivores
             else if (rbtnHerbivore.Checked && rbtnSmall.Checked)
             {
-                Animal a = new Animal(rbtnHerbivore.Text.ToString(), rbtnSmall.Text.ToString());
+                //Animal a = new Animal(rbtnHerbivore.Text.ToString(), rbtnSmall.Text.ToString());
+                Animal a = new Animal(AnimalDiet.Herbivore, AnimalSize.Small);
                 lbAnimals.Items.Add(a);
             }
             else if (rbtnHerbivore.Checked && rbtnMedium.Checked)
             {
-                Animal a = new Animal(rbtnHerbivore.Text.ToString(), rbtnMedium.Text.ToString());
+                //Animal a = new Animal(rbtnHerbivore.Text.ToString(), rbtnMedium.Text.ToString());
+                Animal a = new Animal(AnimalDiet.Herbivore, AnimalSize.Medium);
                 lbAnimals.Items.Add(a);
             }
             else if (rbtnHerbivore.Checked && rbtnLarge.Checked)
             {
-                Animal a = new Animal(rbtnHerbivore.Text.ToString(), rbtnLarge.Text.ToString());
+                //Animal a = new Animal(rbtnHerbivore.Text.ToString(), rbtnLarge.Text.ToString());
+                Animal a = new Animal(AnimalDiet.Herbivore, AnimalSize.Large);
                 lbAnimals.Items.Add(a);
+            }
+            else
+            {
+                MessageBox.Show("Select both the diet and size of the animal");
             }
         }
 

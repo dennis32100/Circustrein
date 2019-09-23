@@ -3,24 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Circustrein.Common;
 
 namespace Circustrein
 {
     class Animal
     {
         //Properties
-        public string Diet { get; private set; }
+        private AnimalDiet Diet { get; set; }
 
-        public string Size { get; private set; }
+        private AnimalSize Size { get; set; }
 
-        public static int n = 1;
+        private int n;
+
+        private static int nCounter = 1;
 
         //Constructor
-        public Animal(string diet, string size)
+        public Animal(AnimalDiet diet, AnimalSize size)
         {
             this.Diet = diet;
             this.Size = size;
-            n++;
+            n = nCounter;
+            nCounter++;
         }
 
         public override string ToString()

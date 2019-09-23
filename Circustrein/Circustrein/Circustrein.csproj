@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="Algorithm.cs" />
     <Compile Include="Animal.cs" />
-    <Compile Include="Common\AnimalAtributes.cs" />
+    <Compile Include="Common\AnimalAttributes.cs" />
     <Compile Include="Coupe.cs" />
     <Compile Include="View.cs">
       <SubType>Form</SubType>

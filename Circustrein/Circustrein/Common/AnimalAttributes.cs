@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Circustrein.Common
 {
-    class AnimalAtributes
-    {
-        enum Diet { Carnivore, Herbivore}
+        enum AnimalDiet { Carnivore, Herbivore}
 
-        enum Size { Small = 1, Medium = 3, Large = 5}
-    }
+        enum AnimalSize { Small = 1, Medium = 3, Large = 5}
 }

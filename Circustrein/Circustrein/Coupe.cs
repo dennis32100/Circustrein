@@ -10,11 +10,14 @@ namespace Circustrein
     {
         public List<Animal> AnimalsInCoupe { get; private set; }
 
-        public static int CoupeNumber = 1;
+        public int coupeN { get; private set; }
+
+        private static int coupeCounter = 1;
 
         public Coupe()
         {
-            CoupeNumber++;
+            coupeN = coupeCounter;
+            coupeCounter++;
             AnimalsInCoupe = new List<Animal>();
         }
 

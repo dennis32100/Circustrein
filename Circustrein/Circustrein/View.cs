@@ -16,6 +16,41 @@ namespace Circustrein
         public View()
         {
             InitializeComponent();
+            
+            Animal a = new Animal(AnimalDiet.Carnivore, AnimalSize.Small);
+            Animal b = new Animal(AnimalDiet.Herbivore, AnimalSize.Medium);
+            Animal c = new Animal(AnimalDiet.Carnivore, AnimalSize.Medium);
+            Animal d = new Animal(AnimalDiet.Herbivore, AnimalSize.Large);
+            Animal e = new Animal(AnimalDiet.Carnivore, AnimalSize.Large);
+            Animal f = new Animal(AnimalDiet.Herbivore, AnimalSize.Medium);
+            Animal g = new Animal(AnimalDiet.Carnivore, AnimalSize.Medium);
+            Animal h = new Animal(AnimalDiet.Carnivore, AnimalSize.Small);
+            Animal i = new Animal(AnimalDiet.Herbivore, AnimalSize.Medium);
+            Animal j = new Animal(AnimalDiet.Herbivore, AnimalSize.Medium);
+
+            List<Animal> animals = new List<Animal>();
+            animals.Add(a);
+            animals.Add(b);
+            animals.Add(c);
+            animals.Add(d);
+            animals.Add(e);
+            animals.Add(f);
+            animals.Add(g);
+            animals.Add(h);
+            animals.Add(i);
+            animals.Add(j);
+
+            Algorithm algo = new Algorithm();
+            List<Coupe> sorted = algo.SortAnimalsIntoCoupes(animals);
+
+            foreach (var coupe in sorted)
+            {
+                Console.WriteLine("CoupeNr: " + coupe.coupeN.ToString());
+                foreach (var animal in coupe.AnimalsInCoupe)
+                {
+                    Console.WriteLine(animal.ToString());
+                }
+            }
         }
 
         private void btnAddAnimal_Click(object sender, EventArgs e)

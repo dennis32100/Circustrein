@@ -10,9 +10,9 @@ namespace Circustrein
     class Animal
     {
         //Properties
-        private AnimalDiet Diet { get; set; }
+        public AnimalDiet Diet { get; private set; }
 
-        private AnimalSize Size { get; set; }
+        public AnimalSize Size { get; private set; }
 
         private int n;
 

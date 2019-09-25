@@ -19,7 +19,16 @@ namespace Circustrein
             coupeN = coupeCounter;
             coupeCounter++;
             AnimalsInCoupe = new List<Animal>();
+           
         }
+
+        //public Coupe(Animal a)
+        //{
+        //    coupeN = coupeCounter;
+        //    coupeCounter++;
+        //    AnimalsInCoupe = new List<Animal>();
+        //    AnimalsInCoupe.Add(a);
+        //}
 
         //Animal who eats meat cant be in the same coupe as an animal same size/smaller than him.
         //Coupe maxcapacity = 10, small animal = 1, medium = 3, big = 5.

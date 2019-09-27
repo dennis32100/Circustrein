@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Algorithm.cs" />
+    <Compile Include="Sort.cs" />
     <Compile Include="Classes\Animal.cs" />
     <Compile Include="Common\AnimalAttributes.cs" />
     <Compile Include="Classes\Coupe.cs" />

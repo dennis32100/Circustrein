@@ -16,16 +16,16 @@ namespace Circustrein
         public View()
         {
             InitializeComponent();
-            
+
             Animal a = new Animal(AnimalDiet.Carnivore, AnimalSize.Small);
             Animal b = new Animal(AnimalDiet.Herbivore, AnimalSize.Medium);
             Animal c = new Animal(AnimalDiet.Carnivore, AnimalSize.Medium);
             Animal d = new Animal(AnimalDiet.Herbivore, AnimalSize.Large);
             Animal e = new Animal(AnimalDiet.Carnivore, AnimalSize.Large);
             Animal f = new Animal(AnimalDiet.Herbivore, AnimalSize.Medium);
-            Animal g = new Animal(AnimalDiet.Carnivore, AnimalSize.Medium);
-            Animal h = new Animal(AnimalDiet.Carnivore, AnimalSize.Small);
-            Animal i = new Animal(AnimalDiet.Herbivore, AnimalSize.Medium);
+            Animal g = new Animal(AnimalDiet.Herbivore, AnimalSize.Medium);
+            Animal h = new Animal(AnimalDiet.Herbivore, AnimalSize.Large);
+            Animal i = new Animal(AnimalDiet.Herbivore, AnimalSize.Large);
             Animal j = new Animal(AnimalDiet.Herbivore, AnimalSize.Medium);
 
             List<Animal> animals = new List<Animal>();
@@ -40,8 +40,8 @@ namespace Circustrein
             animals.Add(i);
             animals.Add(j);
 
-            Algorithm algo = new Algorithm();
-            List<Coupe> sorted = algo.SortAnimalsIntoCoupes(animals);
+            Sort sort = new Sort();
+            List<Coupe> sorted = sort.SortAnimalsIntoCoupes(animals);
 
             foreach (var coupe in sorted)
             {
@@ -51,6 +51,7 @@ namespace Circustrein
                     Console.WriteLine(animal.ToString());
                 }
             }
+
         }
 
         private void btnAddAnimal_Click(object sender, EventArgs e)

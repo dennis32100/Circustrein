@@ -7,7 +7,7 @@ using Circustrein.Common;
 
 namespace Circustrein
 {
-    class Algorithm
+    class Sort
     {
         public List<Coupe> SortAnimalsIntoCoupes(List<Animal> animals)
         {
@@ -17,28 +17,33 @@ namespace Circustrein
             t.coupes.Add(c);
             foreach (var animal in animals)
             {
-
                 //WiP
+
+
+                //SOLID maken.
                 foreach (var coupe in t.coupes.ToList())
                 {
-                    if (CanAnimalBeAdded(animal, c))
+                    if (CanAnimalBeAdded(animal, coupe))
                     {
-                        c.AnimalsInCoupe.Add(animal);
+                        coupe.AnimalsInCoupe.Add(animal);
+                        break;
                     }
-                    else
+                    if (coupe.coupeN == t.coupes.Count)
                     {
                         Coupe newc = new Coupe();
-                        t.coupes.Add(newc);
                         newc.AnimalsInCoupe.Add(animal);
+                        t.coupes.Add(newc);
+                        break;
                     }
                 }
             }
             return t.coupes;
         }
 
+
+        //Return coupe?
         public bool CanAnimalBeAdded(Animal a, Coupe c)
         {
-            //NotDone
             if (CheckCapacity(a, c) && CheckDietCompatibility(a, c))
             {
                 return true;
@@ -47,11 +52,11 @@ namespace Circustrein
             {
                 return false;
             }
+
         }
 
         public bool CheckCapacity(Animal a, Coupe c)
         {
-            //NotDone
             int total = 0;
             foreach (var animal in c.AnimalsInCoupe)
             {
@@ -69,7 +74,6 @@ namespace Circustrein
 
         public bool CheckDietCompatibility(Animal a, Coupe c)
         {
-            //WiP
             foreach (var animal in c.AnimalsInCoupe)
             {
                 if (a.Diet == AnimalDiet.Carnivore)
@@ -77,8 +81,6 @@ namespace Circustrein
                     //Check for size
                     if (CheckSizeCompatibility(a, animal))
                     {
-                        //Coupe newcoupe = new Coupe();
-                        //newcoupe.AnimalsInCoupe.Add(animal);
                         return true;
                     }
                     else
@@ -97,7 +99,6 @@ namespace Circustrein
 
         public bool CheckSizeCompatibility(Animal a, Animal b)
         {
-            //NotDone
             if ((int)a.Size < (int)b.Size)
             {
                 return true;
@@ -107,5 +108,6 @@ namespace Circustrein
                 return false;
             }
         }
+
     }
 }

@@ -17,10 +17,6 @@ namespace Circustrein
             t.coupes.Add(c);
             foreach (var animal in animals)
             {
-                //WiP
-
-
-                //SOLID maken.
                 foreach (var coupe in t.coupes.ToList())
                 {
                     if (CanAnimalBeAdded(animal, coupe))
